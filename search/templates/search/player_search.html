@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}검색 결과{% endblock %}
+
+{% block content %}
+    {% if players %}
+        <h2>검색 결과:</h2>
+        <ul>
+            {% for player in players %}
+                <li>{{ player.playername }} - 키: {{ player.height }}cm, 몸무게: {{ player.weight }}kg, 포지션: {{ player.position }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>검색 결과가 없습니다.</p>
+    {% endif %}
+{% endblock %}
